@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Convert to Minutes</h1>
+    
+    <input type="text" id="time">
+    <button onclick="convertToMinutesFormat(document.getElementById('time').value)">OK</button>
+    
+    <p id="teksti"></p>
+
+    <script>
+        const convertToMinutesFormat = (hoursInHundredths) => {
+            
+            if (typeof (hoursInHundredths === "string")) {
+                hoursInHundredths = hoursInHundredths.replace(",", ".");
+            } else {
+                hoursInHundredths = hoursInHundredths.toString();
+            }
+            const splitter = hoursInHundredths.split(".");
+            let hours = splitter[0];
+            let minutes = splitter[1];
+            minutes = (minutes / 100) * 60;
+            const newTime = hours + ":" + minutes;
+            const text = hoursInHundredths + " hours is in hours and minutes equal to " + newTime;
+            document.getElementById("teksti").innerHTML = text;
+        };
+    </script>
+
+</body>

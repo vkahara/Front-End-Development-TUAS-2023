@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Input a year and press OK</h1>
+    <input type="number" id="buttonInput">
+    <button onclick="isLeapYear(document.getElementById('buttonInput').value)">OK</button>
+    <p id="teksti"></p>
+
+    <script>
+        function isLeapYear(syote) {
+
+            if (((syote % 4 == 0) && (syote % 100 != 0)) || (syote % 400 == 0)) {
+                var text = "the year " + syote + " is a leap year";
+                document.getElementById("teksti").innerHTML = text;
+            } else {
+                var text = "the year " + syote + " is not a leap year";
+                document.getElementById("teksti").innerHTML = text;
+            }
+        }
+    </script>
+
+</body>

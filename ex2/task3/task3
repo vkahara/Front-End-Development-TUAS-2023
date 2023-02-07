@@ -1,0 +1,23 @@
+
+const convertToMinutesFormat = (hoursInHundredths) => {
+
+  //if hoursInHundreths is not a number
+  //convert hoursInHundreths to integer and replace comma to a dot
+  if (typeof (hoursInHundredths === "string")) {
+    hoursInHundredths = hoursInHundredths.replace(",", ".");
+  } else {
+    hoursInHundredths = hoursInHundredths.toString();
+  }
+  const splitter = hoursInHundredths.split(".");
+  let hours = splitter[0];
+  let minutes = splitter[1];
+  minutes = (minutes / 100) * 60;
+  const newTime = hours + ":" + minutes;
+  console.log(newTime);
+
+};
+
+
+var numberToConvert = "0.15";
+
+convertToMinutesFormat(numberToConvert);

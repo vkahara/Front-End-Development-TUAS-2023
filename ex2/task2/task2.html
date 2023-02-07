@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1> containsNumber</h1>
+    <p>aNumber</p>
+    <input type="number" id="aNumber">
+    <button onclick="containsNumber([6,4,2,5,9,7,5,7,2], +document.getElementById('aNumber').value)">OK</button>
+    <!-- The unary + coerces its operand into a number -->
+    <p id="teksti"></p>
+
+    <script>
+        const containsNumber = function (numbers, aNumber) {
+
+            const includesNumber = numbers.includes(aNumber);
+
+            if (includesNumber) {
+                console.log(includesNumber);
+                var text = "Array contains the number " + aNumber;
+                document.getElementById("teksti").innerHTML = text;
+            } else {
+                var text = "Array doesnt contain the number " + aNumber;
+                document.getElementById("teksti").innerHTML = text;
+            }
+        };
+    </script>
+
+</body>
