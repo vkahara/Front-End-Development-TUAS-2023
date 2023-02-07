@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    
+    <h1>is a leap year?</h1>
+    <input type="text" id="text" value="input a year"> 
+    <button onclick="isLeapYear()">OK</button>
+    <p id="tulosta"> - </p>
+
+    <script>
+    
+
+    function isLeapYear(syote) {
+
+        if (((syote % 4 == 0) && (syote % 100 != 0)) || (syote % 400 == 0)) {
+            return(syote," is a leap year");
+        } else {
+            return(syote," isnt a leap year");
+        }
+    }
+
+    
+    
+    </script>
+</body>
